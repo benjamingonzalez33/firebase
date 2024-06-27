@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Proyectos Arquitectónicos</title>
+    <link rel="stylesheet" href="css/estilo.css">
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/sweetalert2.min.js"></script>
+</head>
+
+<body class="bg-light">
+    <header class="container-fluid p-5 bg-primary text-white text-center">
+        <h1>Proyectos Arquitectónicos</h1>
+    </header>
+    <div class="header-carousel">
+        <img src="imgss/pexels-pixabay-262367.jpg" alt="Header Image 1" class="active">
+        <img src="imgss/pexels-pixabay-262347.jpg" alt="Header Image 2">
+        <img src="imgss/pexels-heyho-7031604.jpg" alt="Header Image 3">
+        <img src="imgss/pexels-heyho-7031408.jpg" alt="Header Image 4">
+        <img src="imgss/pexels-heyho-5997996.jpg" alt="Header Image 5">
+        
+        <h2> Arquitectura en 3D - ArchiCAD · AutoCAD</h2>
+    </div>
+    <main class="container-fluid">
+        <div class="row mt-3">
+            <div class="col-4">
+                <form action="" class="card">
+                    <div class="card-header">
+                        <h5>Ingresa el proyecto</h5>
+                    </div>
+                    <div class="card-body">
+                        <div>
+                            <label>Código del Proyecto</label>
+                            <input type="text" class="form-control" id="codigo" name="codigo" onblur="verificar(this.id)">
+                            <div id="e-codigo"></div>
+                        </div>
+                        <div>
+                            <label>Nombre del Proyecto</label>
+                            <input type="text" class="form-control" id="nombre" name="nombre" onblur="verificar(this.id)">
+                            <div id="e-nombre"></div>
+                        </div>
+                        <div>
+                            <label>Tipo</label>
+                            <select class="form-control" id="tipo" name="tipo" onblur="verificar(this.id)">
+                                <option value="">Selecciona</option>
+                                <option value="Residencial">Residencial</option>
+                                <option value="Comercial">Comercial</option>
+                                <option value="Industrial">Industrial</option>
+                                <option value="Público">Público</option>
+                            </select>
+                            <div id="e-tipo"></div>
+                        </div>
+                        <div>
+                            <label>Fecha de Inicio</label>
+                            <input type="date" class="form-control" id="fechaInicio" name="fechaInicio" onblur="verificar(this.id)">
+                            <div id="e-fechaInicio"></div>
+                        </div>
+                        <div>
+                            <label>Email</label>
+                            <input type="email" class="form-control" id="email" name="email" onblur="verificar(this.id)">
+                            <div id="e-email"></div>
+                        </div>
+                        <div>
+                            <label>Presupuesto</label>
+                            <input type="number" class="form-control" id="presupuesto" name="presupuesto" onblur="verificar(this.id)" oninput="soloNumeros(this.id)">
+                            <div id="e-presupuesto"></div>
+                        </div>
+                        <div>
+                            <label>Estado</label><br>
+                            <input type="radio" id="estado1" name="estado" value="Planeado" checked> Planeado
+                            <input type="radio" id="estado2" name="estado" value="En Proceso"> En Proceso
+                            <input type="radio" id="estado3" name="estado" value="Finalizado"> Finalizado
+                            <div id="e-estado"></div>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <button type="button" id="btnGuardar" class="btn btn-primary">Guardar</button>
+                        <button type="button" id="btnLimpiar" class="btn btn-warning">Limpiar</button>
+
+                        <button type="reset" class="btn btn-secondary">Cancelar</button>
+                    </div>
+                </form>
+            </div>
+            <div class="col-8">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Código</th>
+                            <th>Nombre</th>
+                            <th>Tipo</th>
+                            <th>Fecha de Inicio</th>
+                            <th>Email</th>
+                            <th>Presupuesto</th>
+                            <th>Estado</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="contenido"></tbody>
+                </table>
+            </div>
+        </div>
+        
+    </main>
+    <script type="module" src="./firestore.js"></script>
+    <script type="module" src="./funciones.js"></script>
+    <script src="./utilidades.js"></script>
+
+<footer>
+        <p>&copy; 2024 Victor Monares <br>Victormonaresespinoza@gmail.com <br> Arquitecto 3D. <br> Todos los derechos reservados.</p> <!-- Información de derechos de autor -->
+ </footer>
+    <script src="js/utilidades.js"></script>
+    <script src="js/funciones.js" type="module"></script>
+</body>
+</html>
